@@ -18,10 +18,11 @@ jobs:
       - run: npm ci
       - run: npm test --if-present
       # Branches that will release new versions is defined in .releaserc.json
-      - run: npx semantic-release --dry-run --debug
+      # - run: npx semantic-release
+      - run: npx semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          #NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
       # Should release fail, dry rerun with debug on for richer logs
       - if: ${{ failure() }}
         run: npx semantic-release --dry-run --debug
