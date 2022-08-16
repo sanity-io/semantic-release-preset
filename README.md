@@ -1,3 +1,5 @@
+<!-- markdownlint-disable-file MD025 -->
+
 # @sanity/semantic-release-preset <!-- omit in toc -->
 
 [![npm (scoped)](https://img.shields.io/npm/v/@sanity/semantic-release-preset.svg)](https://www.npmjs.com/package/@sanity/semantic-release-preset)
@@ -58,7 +60,7 @@ Create a `.releaserc.json`:
 }
 ```
 
-The `branches` array is [mandatory](https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches), and in most repos you should put the default git branch here (`main`, or `master` if it's an older repo).
+The `branches` array is [mandatory](https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches), and in most repositories you should put the default git branch here (`main`, or `master` if it's an older repository).
 
 ### Optional: Configure prerelease branches
 

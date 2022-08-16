@@ -43,7 +43,8 @@
   },
   "prettier": {
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "dependencies": {
     "@semantic-release/changelog": "^6.0.1",
