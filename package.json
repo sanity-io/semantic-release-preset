@@ -32,9 +32,8 @@
   },
   "license": "MIT",
   "author": "Sanity.io <hello@sanity.io>",
-  "main": "./index.js",
+  "main": "index.js",
   "files": [
-    
     "index.js"
   ],
   "scripts": {
@@ -51,6 +50,7 @@
     "semantic-release": "^19.0.3"
   },
   "devDependencies": {
+    "@types/semantic-release": "^17.2.4",
     "prettier": "^2.7.1",
     "prettier-plugin-packagejson": "^2.2.18"
   },

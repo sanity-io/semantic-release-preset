@@ -1,0 +1,24 @@
+---
+name: Release
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          # Need to fetch entire commit history to analyze every commit since last release
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+      - run: npm ci
+      - run: npm test --if-present
+      # Branches that will release new versions is defined in .releaserc.json
+      - run: npx semantic-release --dry-run --debug
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Re-enable once it's verified --dry-run is used correctly to avoid accidental publish
+          # NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
