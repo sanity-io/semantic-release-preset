@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.0...v1.0.1) (2022-08-16)
+
+
+### Bug Fixes
+
+* **README:** add link to gitlab preset ([329fa8c](https://github.com/sanity-io/semantic-release-preset/commit/329fa8cf19ac99389158cefa4a8f09e6e98627e6))
+
 # 1.0.0 (2022-08-16)
 
 
