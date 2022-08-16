@@ -38,7 +38,8 @@
   ],
   "scripts": {
     "fmt": "npm run prettier -- --write .",
-    "prettier": "npx prettier --ignore-path .gitignore"
+    "prettier": "npx prettier --ignore-path .gitignore",
+    "test": "npx ls-engines"
   },
   "prettier": {
     "semi": false,
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@types/semantic-release": "^17.2.4",
+    "ls-engines": "^0.7.0",
     "prettier": "^2.7.1",
     "prettier-plugin-packagejson": "^2.2.18"
   },

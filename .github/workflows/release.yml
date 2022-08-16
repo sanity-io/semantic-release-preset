@@ -9,15 +9,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          # Need to fetch entire commit history to
-          # analyze every commit since last release
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
       - run: npm ci
-      - run: npm test --if-present
-      # Branches that will release new versions is defined in .releaserc.json
+      - run: npm test
       # - run: npx semantic-release
       - run: npx semantic-release --dry-run
         env:
