@@ -1,0 +1,57 @@
+{
+  "name": "@sanity/semantic-release-preset",
+  "version": "0.0.0",
+  "description": "Recommended setup for releasing semantically using GitHub Actions workflows",
+  "main": "./index.js",
+  "files": [
+    "index.js"
+  ],
+  "author": "Sanity.io <hello@sanity.io>",
+  "license": "MIT",
+  "keywords": [
+    ".releaserc.json",
+    "automation",
+    "changelog",
+    "conventional-changelog",
+    "git",
+    "github-package-registry",
+    "github-publish",
+    "github",
+    "npm-publish",
+    "npm",
+    "publish",
+    "release.config.js",
+    "release",
+    "releaserc",
+    "sanity",
+    "semantic-release-config",
+    "semantic-release",
+    "semver"
+  ],
+  "scripts": {
+    "prettier": "npx prettier --ignore-path .gitignore",
+    "fmt": "npx prettier -- --write ."
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/sanity-io/semantic-release-preset/issues"
+  },
+  "homepage": "https://www.sanity.io/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanity-io/semantic-release-preset.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "prettier-plugin-packagejson": "^2.2.18"
+  }
+}
