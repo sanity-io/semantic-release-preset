@@ -34,9 +34,7 @@ npm i -D @sanity/semantic-release-preset
 <details>
 <summary>Why isn't <code>semantic-release</code> a peer dependency?</summary>
 
-https://github.com/semantic-release/gitlab-config#install
-
-There's a convention in `semantic-release` presets to have it as a peer, which would make the install setup look like this:
+There's a [convention](https://github.com/semantic-release/gitlab-config#install) in `semantic-release` presets to have it as a peer, which would make the install setup look like this:
 
 ```bash
 npm install --save-dev semantic-release @sanity/semantic-release-preset
