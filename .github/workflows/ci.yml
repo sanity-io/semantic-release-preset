@@ -39,6 +39,10 @@ jobs:
           GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
           RELEASE: ${{ inputs.release }}
           TEST: ${{ inputs.test }}
+      - run: echo test is boolean false
+        if: ${{ inputs.test == false }}
+      - run: echo test is string 'false'
+        if: ${{ inputs.test == 'false' }}
 
   build:
     runs-on: ubuntu-latest
