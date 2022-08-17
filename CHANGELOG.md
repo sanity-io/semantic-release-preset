@@ -5,6 +5,20 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.4...v2.0.0) (2022-08-17)
+
+### ⚠ BREAKING CHANGES
+
+- this preset used the angular commit convention previously, from now on it's conventional commits so we match our commitlint and other semantic release setups.
+
+### Features
+
+- switch to conventional commits ([#9](https://github.com/sanity-io/semantic-release-preset/issues/9)) ([195fdcf](https://github.com/sanity-io/semantic-release-preset/commit/195fdcf232e8ce088fd6835c962aa2b48b36fed0))
+
+### Bug Fixes
+
+- add note in TODO about docs ([0b6ecdc](https://github.com/sanity-io/semantic-release-preset/commit/0b6ecdcba08114dc86c9d77ef9f3c893e192cf93))
+
 ## [1.1.4](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.3...v1.1.4) (2022-08-17)
 
 ### Bug Fixes
