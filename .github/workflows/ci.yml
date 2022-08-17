@@ -42,7 +42,7 @@ jobs:
       - run: echo test is boolean false
         if: ${{ github.event.inputs.test == false }}
       - run: echo test is string 'false'
-        if: ${{ github.event.inputs.test == 'false' }}
+        if: ${{ github.event.inputs.test != 'false' }}
 
   build:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
       - run: npm run prepublishOnly --if-present
 
   test:
-    if: ${{ inputs.test != false }}
+    if: github.event.inputs.test != 'false'
     needs: build
     runs-on: ${{ matrix.os }}
     strategy:
@@ -76,8 +76,7 @@ jobs:
 
   release:
     # only run if opt-in during workflow_dispatch
-    #if: inputs.release == true
-    if: ${{ always() && inputs.release == true }}
+    if: github.event.inputs.release == 'true'
     needs: test
     runs-on: ubuntu-latest
     steps:
