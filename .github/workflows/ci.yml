@@ -74,15 +74,25 @@ jobs:
       - run: npm ci
       - run: npm test --if-present
 
+  test-needs:
+    if: always()
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          NEEDS: ${{ toJSON(needs) }}     
+        run: |
+          echo "$NEEDS"
+
   test-is-failure:
-    if: failure()
+    if: always() && failure()
     needs: test
     runs-on: ubuntu-latest
     steps:
       - run: echo true
   
   test-is-cancelled:
-    if: cancelled()
+    if: always() && cancelled()
     needs: test
     runs-on: ubuntu-latest
     steps:
