@@ -107,7 +107,7 @@ jobs:
   release:
     needs: test
     # only run if opt-in during workflow_dispatch
-    if: github.event.inputs.release == 'true'
+    if: always() && github.event.inputs.release == 'true' && needs.test.result == 'success' || needs.test.result == 'skipped'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
