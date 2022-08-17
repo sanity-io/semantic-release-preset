@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.3](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.2...v1.0.3) (2022-08-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency semantic-release to ^19.0.3 ([287d8d0](https://github.com/sanity-io/semantic-release-preset/commit/287d8d0842ba4f99794310ac25f02acbece12ce4))
+
 ## [1.0.2](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.1...v1.0.2) (2022-08-17)
 
 
