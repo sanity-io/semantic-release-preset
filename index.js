@@ -22,11 +22,13 @@ All notable changes to this project will be documented in this file. See
         tarballDir: '.semantic-release'
       }
     ],
+    'semantic-release-license',
     [
       '@semantic-release/git',
       {
         assets: [
           'CHANGELOG.md',
+          'LICENSE',
           'package-lock.json',
           'package.json',
           'pnpm-lock.yaml',
