@@ -85,38 +85,9 @@ jobs:
         run: |
           echo "$NEEDS"
 
-  test-is-failure:
-    if: always() && failure()
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo true
-  
-  test-is-cancelled:
-    if: always() && cancelled()
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo true
-
-  release-if-skipping-tests:
-    if: github.event.inputs.release == 'true' && github.event.inputs.tests == 'false'
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo true
-  
-  release-if-successfull-tests:
-    if: github.event.inputs.release == 'true' && github.event.inputs.tests != 'false'
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo true
-
   release:
     # only run if opt-in during workflow_dispatch
-    if: always() && github.event.inputs.release == 'true'
-    # if: github.event.inputs.release == 'true' && github.event.inputs.test
+    if: github.event.inputs.release == 'true'
     needs: test
     runs-on: ubuntu-latest
     steps:
