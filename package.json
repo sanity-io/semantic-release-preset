@@ -34,6 +34,7 @@
   "author": "Sanity.io <hello@sanity.io>",
   "main": "index.js",
   "files": [
+    "CHANGELOG.md",
     "index.js"
   ],
   "scripts": {
@@ -49,7 +50,8 @@
   "dependencies": {
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^19.0.3"
+    "semantic-release": "^19.0.3",
+    "semantic-release-license": "^1.0.3"
   },
   "devDependencies": {
     "@types/semantic-release": "^17.2.4",
