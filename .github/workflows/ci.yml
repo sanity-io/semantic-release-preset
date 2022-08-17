@@ -40,9 +40,9 @@ jobs:
           RELEASE: ${{ inputs.release }}
           TEST: ${{ inputs.test }}
       - run: echo test is boolean false
-        if: ${{ inputs.test == false }}
+        if: ${{ github.event.inputs.test == false }}
       - run: echo test is string 'false'
-        if: ${{ inputs.test == 'false' }}
+        if: ${{ github.event.inputs.test == 'false' }}
 
   build:
     runs-on: ubuntu-latest
