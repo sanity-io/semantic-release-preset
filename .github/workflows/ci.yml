@@ -24,7 +24,7 @@ on:
         type: boolean
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || "no-release" }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
   cancel-in-progress: true
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
           echo "Publish new release: $RELEASE"
           echo "Run tests: $TEST"
         env:
-          GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || "no-release" }}
+          GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
           RELEASE: ${{ inputs.release }}
           TEST: ${{ inputs.test }}
 
