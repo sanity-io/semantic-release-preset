@@ -11,7 +11,7 @@ const options = {
     [
       '@semantic-release/changelog',
       {
-        changelogTitle: `<!-- markdownlint-disable -->
+        changelogTitle: `<!-- markdownlint-disable --><!-- textlint-disable -->
 # 📓 Changelog
 
 All notable changes to this project will be documented in this file. See
