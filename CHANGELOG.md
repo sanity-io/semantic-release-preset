@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.1.0-semantic-release-license.1](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.3...v1.1.0-semantic-release-license.1) (2022-08-17)
+
+
+### Features
+
+* add semantic-release-license ([81264af](https://github.com/sanity-io/semantic-release-preset/commit/81264afeac7a6673b573f722ea687f02e6ac9cb8))
+
 ## [1.0.3](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.2...v1.0.3) (2022-08-17)
 
 
