@@ -73,7 +73,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test --if-present
-      - run: exit 1
 
   test-needs:
     if: always()
