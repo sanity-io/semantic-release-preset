@@ -35,12 +35,10 @@ jobs:
           echo "concurrency.group: $GROUP"
           echo "Publish new release: $RELEASE"
           echo "Run tests: $TEST"
-          echo "Inputs: $INPUTS"
         env:
           GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
           RELEASE: ${{ inputs.release }}
           TEST: ${{ inputs.test }}
-          INPUTS: ${{ inputs }}
 
   build:
     runs-on: ubuntu-latest
