@@ -76,7 +76,7 @@ jobs:
 
   release:
     # only run if opt-in during workflow_dispatch
-    if: github.event.inputs.release == 'true'
+    if: (cancelled() || success()) && github.event.inputs.release == 'true'
     needs: test
     runs-on: ubuntu-latest
     steps:
