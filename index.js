@@ -1,13 +1,15 @@
 // @ts-check
 /* eslint-disable no-template-curly-in-string */
 
+const preset = 'conventionalcommits'
+
 /**
  * @type {import('semantic-release').Options}
  **/
 const options = {
   plugins: [
-    '@semantic-release/commit-analyzer',
-    '@semantic-release/release-notes-generator',
+    ['@semantic-release/commit-analyzer', { preset }],
+    ['@semantic-release/release-notes-generator', { preset }],
     [
       '@semantic-release/changelog',
       {

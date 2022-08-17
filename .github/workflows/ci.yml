@@ -76,17 +76,17 @@ jobs:
   #   runs-on: ubuntu-latest
   #   steps:
   #     - env:
-  #         NEEDS: ${{ toJSON(needs) }}     
+  #         NEEDS: ${{ toJSON(needs) }}
   #       run: |
   #         echo "$NEEDS"
-    
+
   # test-needs-skipped:
   #   needs: test
   #   if: always() && github.event.inputs.release == 'true' && needs.test.result == 'skipped'
   #   runs-on: ubuntu-latest
   #   steps:
   #     - env:
-  #         NEEDS: ${{ toJSON(needs) }}     
+  #         NEEDS: ${{ toJSON(needs) }}
   #       run: |
   #         echo "$NEEDS"
 
