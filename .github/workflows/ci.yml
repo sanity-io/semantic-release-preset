@@ -74,19 +74,9 @@ jobs:
       - run: npm ci
       - run: npm test --if-present
 
-  test-needs:
-    needs: test
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          NEEDS: ${{ toJSON(needs) }}     
-        run: |
-          echo "$NEEDS"
-
   test-needs-success:
     needs: test
-    if: always() && needs.test.result == 'success'
+    if: always() && github.event.inputs.release == 'true' && needs.test.result == 'success'
     runs-on: ubuntu-latest
     steps:
       - env:
@@ -96,7 +86,7 @@ jobs:
     
   test-needs-skipped:
     needs: test
-    if: always() && needs.test.result == 'skipped'
+    if: always() && github.event.inputs.release == 'true' && needs.test.result == 'skipped'
     runs-on: ubuntu-latest
     steps:
       - env:
