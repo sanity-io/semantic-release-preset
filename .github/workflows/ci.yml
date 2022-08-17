@@ -12,32 +12,19 @@ on:
   # https://github.com/sanity-io/semantic-release-preset/actions/workflows/ci.yml
   workflow_dispatch:
     inputs:
-      release:
-        description: 'Publish new release'
-        required: true
-        default: false
-        type: boolean
       test:
         description: 'Run tests'
         required: true
         default: true
         type: boolean
-      environment:
-        description: 'Select environment'
-        required: false
-        type: environment
-      logLevel:
-        description: 'Log level'
+      release:
+        description: 'Publish new release'
         required: true
-        default: 'warning' 
-        type: choice
-        options:
-        - info
-        - warning
-        - debug 
+        default: false
+        type: boolean
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event.inputs.release || github.head_ref || github.run_id }}
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || "no-release" }}
   cancel-in-progress: true
 
 jobs:
@@ -48,14 +35,10 @@ jobs:
           echo "concurrency.group: $GROUP"
           echo "Publish new release: $RELEASE"
           echo "Run tests: $TEST"
-          echo "Select environment: $ENVIRONMENT"
-          echo "Log level: $LOGLEVEL"
         env:
-          GROUP: ${{ github.workflow }}-${{ github.ref }}-${{ github.event.inputs.release || github.head_ref || github.run_id }}
+          GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || "no-release" }}
           RELEASE: ${{ inputs.release }}
           TEST: ${{ inputs.test }}
-          ENVIRONMENT: ${{ inputs.environment }}
-          LOGLEVEL: ${{ inputs.logLevel }}
 
   build:
     runs-on: ubuntu-latest
