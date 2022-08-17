@@ -19,6 +19,12 @@ All notable changes to this project will be documented in this file. See
       }
     ],
     [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'npx -y prettier --write CHANGELOG.md'
+      }
+    ],
+    [
       '@semantic-release/npm',
       {
         tarballDir: '.semantic-release'
