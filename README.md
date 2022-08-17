@@ -7,7 +7,7 @@
 
 # Features <!-- omit in toc -->
 
-- Uses the [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines) to generate [release notes](https://github.com/semantic-release/release-notes-generator), [changelogs](https://github.com/semantic-release/changelog) and [determine the version for new releases](https://github.com/semantic-release/commit-analyzer).
+- Uses [Conventional Commits](https://www.conventionalcommits.org/) to generate [release notes](https://github.com/semantic-release/release-notes-generator), [changelogs](https://github.com/semantic-release/changelog) and [determine the version for new releases](https://github.com/semantic-release/commit-analyzer).
 - [Creates or updates a CHANGELOG.md file](https://github.com/semantic-release/changelog).
 - [Publishes to npm](https://github.com/semantic-release/npm).
 - [Creates a new release on GitHub](https://github.com/semantic-release/github)
