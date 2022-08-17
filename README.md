@@ -13,6 +13,7 @@
 - [Creates a new release on GitHub](https://github.com/semantic-release/github)
 - [Updates GitHub issues and PRs that are resolved by a new release](https://github.com/semantic-release/github#successcomment).
 - [Commits and pushes the current `version` to `package.json`](https://github.com/semantic-release/git).
+- [Keep the year in LICENSE up to date](https://github.com/cbhq/semantic-release-license).
 
 # Table of contents <!-- omit in toc -->
 
