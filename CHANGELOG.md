@@ -1,22 +1,27 @@
 <!-- markdownlint-disable --><!-- textlint-disable -->
+
 # 📓 Changelog
 
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.1.1](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.0...v1.1.1) (2022-08-17)
-
+## [1.1.2](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.1...v1.1.2) (2022-08-17)
 
 ### Bug Fixes
 
-* disable markdownlint in changelog ([76b81f2](https://github.com/sanity-io/semantic-release-preset/commit/76b81f2e674ba17f9bdab4aa8706564664841b2d))
+- run prettier on changelog ([0191f99](https://github.com/sanity-io/semantic-release-preset/commit/0191f9993c746418491cbac132b04aa335c4be17))
+
+## [1.1.1](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.0...v1.1.1) (2022-08-17)
+
+### Bug Fixes
+
+- disable markdownlint in changelog ([76b81f2](https://github.com/sanity-io/semantic-release-preset/commit/76b81f2e674ba17f9bdab4aa8706564664841b2d))
 
 # [1.1.0](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.3...v1.1.0) (2022-08-17)
 
-
 ### Features
 
-* add semantic-release-license ([#6](https://github.com/sanity-io/semantic-release-preset/issues/6)) ([588fa26](https://github.com/sanity-io/semantic-release-preset/commit/588fa266303286e4c789020ddc48b83050076d1a))
+- add semantic-release-license ([#6](https://github.com/sanity-io/semantic-release-preset/issues/6)) ([588fa26](https://github.com/sanity-io/semantic-release-preset/commit/588fa266303286e4c789020ddc48b83050076d1a))
 
 ## [1.0.3](https://github.com/sanity-io/semantic-release-preset/compare/v1.0.2...v1.0.3) (2022-08-17)
 
