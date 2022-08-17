@@ -1,0 +1,112 @@
+---
+name: CI
+
+on:
+  # Build on pushes to release branches
+  push:
+    branches: [main]
+  # Build on pull requests targeting release branches
+  pull_request:
+    branches: [main]
+  # https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
+  # https://github.com/sanity-io/semantic-release-preset/actions/workflows/ci.yml
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'Publish new release'
+        required: true
+        default: false
+        type: boolean
+      test:
+        description: 'Run tests'
+        required: true
+        default: true
+        type: boolean
+      environment:
+        description: 'Select environment'
+        required: false
+        type: environment
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning' 
+        type: choice
+        options:
+        - info
+        - warning
+        - debug 
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-${{ github.event.inputs.release || github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Publish new release: $RELEASE"
+          echo "Run tests: $TEST"
+          echo "Select environment: $ENVIRONMENT"
+          echo "Log level: $LOGLEVEL"
+        env:
+          RELEASE: ${{ inputs.release }}
+          TEST: ${{ inputs.test }}
+          ENVIRONMENT: ${{ inputs.environment }}
+          LOGLEVEL: ${{ inputs.logLevel }}
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - run: npm run lint --if-present
+      - run: npm run prepublishOnly --if-present
+
+  test:
+    if: inputs.test == true
+    needs: build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        node: [lts/*, current]
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - run: npm test --if-present
+
+  release:
+    # only run if opt-in and is a workflow
+    if: inputs.release == true && always()
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+          cache: npm
+      - run: npm ci
+      - run: npx semantic-release
+        # Don't allow interrupting the release step if the job is cancelled, as it can lead to an inconsistent state
+        # e.g. git tags were pushed but it exited before `npm publish`
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      # Should release fail, dry rerun with debug on for richer logs
+      - run: npx semantic-release --dry-run --debug
+        if: ${{ failure() }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

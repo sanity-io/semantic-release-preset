@@ -22,8 +22,9 @@
     - [Optional: Configure prerelease branches](#optional-configure-prerelease-branches)
     - [Optional: Advanced prerelease branches](#optional-advanced-prerelease-branches)
     - [Why not use `"prerelease": true`?](#why-not-use-prerelease-true)
-  - [Setup GitHub Release workflow](#setup-github-release-workflow)
+  - [Minimal GitHub Release workflow](#minimal-github-release-workflow)
     - [If you're unable to make it work chances are your issue is documented in the `semantic-release` troubleshooting docs.](#if-youre-unable-to-make-it-work-chances-are-your-issue-is-documented-in-the-semantic-release-troubleshooting-docs)
+  - [Opinionated GitHub Release workflow](#opinionated-github-release-workflow)
 - [Next steps, for even more automation](#next-steps-for-even-more-automation)
 
 # Usage
@@ -137,13 +138,14 @@ npm i package-name@v3-studio
 
 And since we always say "Studio v3" and never "v3 Studio" when talking about the new version it's better to use both `channel` and `prerelease` to set the optimal ordering individually.
 
-## Setup GitHub Release workflow
+## Minimal GitHub Release workflow
 
-Create `.github/workflows/release.yml`:
+This is the bare minimum required steps to trigger a new release. This will push a new release every time an eliglible commit is pushed to git. Check the opinionated flow to see how to trigger releases manually.
+Create `.github/workflows/ci.yml`:
 
 ```yml
 ---
-name: Release
+name: CI
 
 on: push
 
@@ -159,6 +161,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
+          cache: 'npm'
       - run: npm ci
       - run: npm test --if-present
       # Branches that will release new versions are defined in .releaserc.json
@@ -183,7 +186,7 @@ Once you've confirmed with `--dry-run` that everything is looking good and `sema
 
 ```yml
 ---
-name: Release
+name: CI
 
 on: push
 
@@ -199,6 +202,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: lts/*
+          cache: 'npm'
       - run: npm ci
       - run: npm test --if-present
       # Branches that will release new versions are defined in .releaserc.json
@@ -225,6 +229,12 @@ git push
 ```
 
 Check the [Release Workflow docs](https://semantic-release.gitbook.io/semantic-release/recipes/release-workflow) for more information.
+
+## Opinionated GitHub Release workflow
+
+1. This flow runs a `build` task for linting and things that only need to run once.
+2. Runs `test`, which runs a matrix of operating systems and node versions.
+3. FInally, runs `release`, if the workflow started from a `workflow_dispatch`, it is skipped on `push`.
 
 # Next steps, for even more automation
 
