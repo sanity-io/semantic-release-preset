@@ -70,8 +70,9 @@ jobs:
       - run: npm test --if-present
 
   release:
-    # only run if opt-in and is a workflow
-    if: inputs.release == true && always()
+    # only run if opt-in during workflow_dispatch
+    #if: inputs.release == true
+    if: ${{ always() && inputs.release == true }}
     needs: test
     runs-on: ubuntu-latest
     steps:
