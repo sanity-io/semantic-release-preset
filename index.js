@@ -1,4 +1,5 @@
 // @ts-check
+/* eslint-disable no-template-curly-in-string */
 
 /**
  * @type {import('semantic-release').Options}
