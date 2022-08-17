@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.3...v1.1.4) (2022-08-17)
+
+### Bug Fixes
+
+- test new workflow ([d6ee43c](https://github.com/sanity-io/semantic-release-preset/commit/d6ee43c76996f0b2c6cd3581c22e7766f6105e0d))
+
 ## [1.1.3](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.2...v1.1.3) (2022-08-17)
 
 ### Bug Fixes
