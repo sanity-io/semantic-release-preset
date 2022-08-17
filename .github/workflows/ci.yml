@@ -45,11 +45,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          echo "concurrency.group: $GROUP"
           echo "Publish new release: $RELEASE"
           echo "Run tests: $TEST"
           echo "Select environment: $ENVIRONMENT"
           echo "Log level: $LOGLEVEL"
         env:
+          GROUP: ${{ github.workflow }}-${{ github.ref }}-${{ github.event.inputs.release || github.head_ref || github.run_id }}
           RELEASE: ${{ inputs.release }}
           TEST: ${{ inputs.test }}
           ENVIRONMENT: ${{ inputs.environment }}
@@ -68,7 +70,7 @@ jobs:
       - run: npm run prepublishOnly --if-present
 
   test:
-    if: inputs.test == true || input.test == null
+    if: inputs.test == true || inputs.test == null
     needs: build
     runs-on: ${{ matrix.os }}
     strategy:
