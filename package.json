@@ -34,6 +34,7 @@
   "author": "Sanity.io <hello@sanity.io>",
   "main": "index.js",
   "files": [
+    "CHANGELOG.md",
     "index.js"
   ],
   "scripts": {
