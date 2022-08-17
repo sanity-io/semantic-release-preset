@@ -34,7 +34,7 @@ All notable changes to this project will be documented in this file. See
           'pnpm-lock.yaml',
           'yarn.lock'
         ],
-        message: `chore(release): $\{nextRelease.version} [skip ci]`
+        message: 'chore(release): ${nextRelease.version} [skip ci]'
       }
     ],
     [
