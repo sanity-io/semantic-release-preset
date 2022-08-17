@@ -25,6 +25,7 @@
   - [Minimal GitHub Release workflow](#minimal-github-release-workflow)
     - [If you're unable to make it work chances are your issue is documented in the `semantic-release` troubleshooting docs.](#if-youre-unable-to-make-it-work-chances-are-your-issue-is-documented-in-the-semantic-release-troubleshooting-docs)
   - [Opinionated GitHub Release workflow](#opinionated-github-release-workflow)
+    - [TODO more docs are coming, we're actively exploring the optimal setup](#todo-more-docs-are-coming-were-actively-exploring-the-optimal-setup)
 - [Next steps, for even more automation](#next-steps-for-even-more-automation)
 
 # Usage
@@ -235,6 +236,8 @@ Check the [Release Workflow docs](https://semantic-release.gitbook.io/semantic-r
 1. This flow runs a `build` task for linting and things that only need to run once.
 2. Runs `test`, which runs a matrix of operating systems and node versions.
 3. FInally, runs `release`, if the workflow started from a `workflow_dispatch`, it is skipped on `push`.
+
+### TODO more docs are coming, we're actively exploring the optimal setup
 
 # Next steps, for even more automation
 

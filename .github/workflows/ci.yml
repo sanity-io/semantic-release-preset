@@ -28,21 +28,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  log-the-inputs:
-    runs-on: ubuntu-latest
-    steps:
-      - run: |
-          echo "concurrency.group: $GROUP"
-          echo "Publish new release: $RELEASE"
-          echo "Run tests: $TEST"
-        env:
-          GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
-          RELEASE: ${{ inputs.release }}
-          TEST: ${{ inputs.test }}
-      - run: echo test is boolean false
-        if: ${{ github.event.inputs.test == false }}
-      - run: echo test is string 'false'
-        if: ${{ github.event.inputs.test != 'false' }}
+  # log-the-inputs:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: |
+  #         echo "concurrency.group: $GROUP"
+  #         echo "Publish new release: $RELEASE"
+  #         echo "Run tests: $TEST"
+  #       env:
+  #         GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
+  #         RELEASE: ${{ inputs.release }}
+  #         TEST: ${{ inputs.test }}
 
   build:
     runs-on: ubuntu-latest
@@ -74,25 +70,25 @@ jobs:
       - run: npm ci
       - run: npm test --if-present
 
-  test-needs-success:
-    needs: test
-    if: always() && github.event.inputs.release == 'true' && needs.test.result == 'success'
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          NEEDS: ${{ toJSON(needs) }}     
-        run: |
-          echo "$NEEDS"
+  # test-needs-success:
+  #   needs: test
+  #   if: always() && github.event.inputs.release == 'true' && needs.test.result == 'success'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - env:
+  #         NEEDS: ${{ toJSON(needs) }}     
+  #       run: |
+  #         echo "$NEEDS"
     
-  test-needs-skipped:
-    needs: test
-    if: always() && github.event.inputs.release == 'true' && needs.test.result == 'skipped'
-    runs-on: ubuntu-latest
-    steps:
-      - env:
-          NEEDS: ${{ toJSON(needs) }}     
-        run: |
-          echo "$NEEDS"
+  # test-needs-skipped:
+  #   needs: test
+  #   if: always() && github.event.inputs.release == 'true' && needs.test.result == 'skipped'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - env:
+  #         NEEDS: ${{ toJSON(needs) }}     
+  #       run: |
+  #         echo "$NEEDS"
 
   release:
     needs: test
