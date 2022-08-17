@@ -1,4 +1,7 @@
 {
   "extends": "./index.js",
-  "branches": ["main", {"name": "semantic-release-license", "prerelease": true}]
+  "branches": [
+    "main",
+    { "name": "semantic-release-license", "prerelease": true }
+  ]
 }
