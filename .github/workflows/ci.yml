@@ -55,7 +55,7 @@ jobs:
       - run: npm run prepublishOnly --if-present
 
   test:
-    if: ${{ always() && inputs.test != false }}
+    if: ${{ inputs.test != false }}
     needs: build
     runs-on: ${{ matrix.os }}
     strategy:
