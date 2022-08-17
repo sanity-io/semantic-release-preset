@@ -57,8 +57,8 @@ jobs:
       - run: npm run prepublishOnly --if-present
 
   test:
-    if: github.event.inputs.test != 'false'
     needs: build
+    if: github.event.inputs.test != 'false'
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -75,8 +75,28 @@ jobs:
       - run: npm test --if-present
 
   test-needs:
-    if: always()
     needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          NEEDS: ${{ toJSON(needs) }}     
+        run: |
+          echo "$NEEDS"
+
+  test-needs-success:
+    needs: test
+    if: always() && needs.test.result == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          NEEDS: ${{ toJSON(needs) }}     
+        run: |
+          echo "$NEEDS"
+    
+  test-needs-skipped:
+    needs: test
+    if: always() && needs.test.result == 'skipped'
     runs-on: ubuntu-latest
     steps:
       - env:
@@ -85,9 +105,9 @@ jobs:
           echo "$NEEDS"
 
   release:
+    needs: test
     # only run if opt-in during workflow_dispatch
     if: github.event.inputs.release == 'true'
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
