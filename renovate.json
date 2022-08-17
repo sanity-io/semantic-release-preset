@@ -3,5 +3,11 @@
   "extends": [
     "github>sanity-io/renovate-presets//ecosystem/auto",
     "github>sanity-io/renovate-presets//ecosystem/automerge"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["semantic-release-license"],
+      "automerge": false
+    }
   ]
 }
