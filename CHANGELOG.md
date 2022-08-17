@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.3](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.2...v1.1.3) (2022-08-17)
+
+### Bug Fixes
+
+- changelog title formatting ([b87a365](https://github.com/sanity-io/semantic-release-preset/commit/b87a3651ca6f56bb3cecab954fe71ea69e4f7f46))
+
 ## [1.1.2](https://github.com/sanity-io/semantic-release-preset/compare/v1.1.1...v1.1.2) (2022-08-17)
 
 ### Bug Fixes
