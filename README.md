@@ -174,7 +174,7 @@ If you don't you may accidentally release a wrong version on `npm`, [know that y
 
 [You need two secrets](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication-for-plugins), `secrets.GITHUB_TOKEN` is always provided to GitHub actions, but if you try to `--dry-run` locally [you'll need to create a token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line). It's easiest to just push commits and inspect the workflow output. You can add `--debug` to the `npx semantic-release` command to see more verbose logs if there's a tricky error.
 
-The `secrets.NPM_PUBLISH_TOKEN` is provided on our GitHub org. If you're outside it you'll need to [create it](https://docs.npmjs.com/getting-started/working_with_tokens#how-to-create-new-tokens) with [`auth-only` 2FA](https://docs.npmjs.com/about-two-factor-authentication) and [add it to the repo secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment).
+The `secrets.NPM_PUBLISH_TOKEN` is provided on our GitHub org. If you're outside it you'll need to [create it](https://docs.npmjs.com/getting-started/working_with_tokens#how-to-create-new-tokens) with [`auth-only` 2FA](https://docs.npmjs.com/about-two-factor-authentication) and [add it to the repository secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment).
 
 ### If you're unable to make it work chances are your issue is documented in the `semantic-release` [troubleshooting docs](https://semantic-release.gitbook.io/semantic-release/support/troubleshooting).
 
