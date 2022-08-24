@@ -52,7 +52,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "semantic-release": "^19.0.3",
+    "semantic-release": "^19.0.5",
     "semantic-release-license": "^1.0.3"
   },
   "devDependencies": {
