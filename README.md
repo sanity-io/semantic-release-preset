@@ -177,11 +177,12 @@ jobs:
 It's important that you use `--dry-run` in the `npx semantic-release` command until you've verified that `semantic-release` is setup correctly and is able to detect your release branches and published version numbers.
 If you don't you may accidentally release a wrong version on `npm`, [know that you can't simply unpublish accidents](https://docs.npmjs.com/policies/unpublish) so it's best to be safe.
 
-[You need two secrets](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication-for-plugins), `secrets.GITHUB_TOKEN` is always provided to GitHub actions, but if you try to `--dry-run` locally [you'll need to create a token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line). It's easiest to just push commits and inspect the workflow output. You can add `--debug` to the `npx semantic-release` command to see more verbose logs if there's a tricky error.
+[You need two secrets](https://semantic-release.gitbook.io/semantic-release/usage/ci-configuration#authentication-for-plugins), `secrets.GITHUB_TOKEN` is always provided to GitHub actions, but if you try to `--dry-run` locally [you'll need to create a token](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line). 
+It's easiest to just push commits and inspect the workflow output. You can add `--debug` to the `npx semantic-release` command to see more verbose logs if there's a tricky error.
 
 The `secrets.NPM_PUBLISH_TOKEN` is provided on our GitHub org. If you're outside it you'll need to [create it](https://docs.npmjs.com/getting-started/working_with_tokens#how-to-create-new-tokens) with [`auth-only` 2FA](https://docs.npmjs.com/about-two-factor-authentication) and [add it to the repository secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets#creating-encrypted-secrets-for-an-environment).
 
-### If you're unable to make it work chances are your issue is documented in the `semantic-release` [troubleshooting docs](https://semantic-release.gitbook.io/semantic-release/support/troubleshooting).
+### If you're unable to make it work chances are your issue is documented in the `semantic-release` [troubleshooting docs](https://semantic-release.gitbook.io/semantic-release/support/troubleshooting)
 
 Once you've confirmed with `--dry-run` that everything is looking good and `semantic-release` will perform the actions you expect it to, go ahead and edit `.github/workflows/release.yml`:
 
@@ -234,7 +235,7 @@ Check the [Release Workflow docs](https://semantic-release.gitbook.io/semantic-r
 ## Opinionated GitHub Release workflow
 
 1. This flow runs a `build` task for linting and things that only need to run once.
-2. Runs `test`, which runs a matrix of operating systems and node versions.
+2. Runs `test`, which runs a matrix of operating systems and Node.js versions.
 3. FInally, runs `release`, if the workflow started from a `workflow_dispatch`, it is skipped on `push`.
 
 ### TODO more docs are coming, we're actively exploring the optimal setup
