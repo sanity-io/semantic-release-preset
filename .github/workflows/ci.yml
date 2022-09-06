@@ -24,7 +24,6 @@ on:
         type: boolean
 
 concurrency:
-  # yamllint disable-line rule:line-length
   group: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
   cancel-in-progress: true
 
@@ -37,7 +36,6 @@ jobs:
   #         echo "Publish new release: $RELEASE"
   #         echo "Run tests: $TEST"
   #       env:
-  # yamllint disable-line rule:line-length
   #         GROUP: ${{ github.workflow }}-${{ github.head_ref || github.ref }}-${{ github.event.inputs.release || 'no-release' }}
   #         RELEASE: ${{ inputs.release }}
   #         TEST: ${{ inputs.test }}
@@ -74,7 +72,6 @@ jobs:
 
   # test-needs-success:
   #   needs: test
-  # yamllint disable-line rule:line-length
   #   if: always() && github.event.inputs.release == 'true' && needs.test.result == 'success'
   #   runs-on: ubuntu-latest
   #   steps:
@@ -85,7 +82,6 @@ jobs:
 
   # test-needs-skipped:
   #   needs: test
-  # yamllint disable-line rule:line-length
   #   if: always() && github.event.inputs.release == 'true' && needs.test.result == 'skipped'
   #   runs-on: ubuntu-latest
   #   steps:
@@ -99,7 +95,6 @@ jobs:
     # only run if opt-in during workflow_dispatch
     # needs.test.result: 'success' | 'failure' | 'skipped' | 'cancelled'
     # If the state is success or skipped it's safe to do the release
-    # yamllint disable-line rule:line-length
     if: always() && github.event.inputs.release == 'true' && needs.test.result != 'failure' && needs.test.result != 'cancelled'
     runs-on: ubuntu-latest
     steps:
@@ -112,7 +107,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npx semantic-release
-        # yamllint disable-line rule:line-length
         # Don't allow interrupting the release step if the job is cancelled, as it can lead to an inconsistent state
         # e.g. git tags were pushed but it exited before `npm publish`
         if: always()
