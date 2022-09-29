@@ -59,7 +59,7 @@
     "@types/semantic-release": "^17.2.4",
     "ls-engines": "^0.7.0",
     "prettier": "^2.7.1",
-    "prettier-plugin-packagejson": "^2.2.18"
+    "prettier-plugin-packagejson": "^2.3.0"
   },
   "engines": {
     "node": ">=16.0.0"
