@@ -190,7 +190,12 @@ Once you've confirmed with `--dry-run` that everything is looking good and `sema
 ---
 name: CI
 
-on: push
+on:
+  # Build on pushes branches that have a PR (including drafts)
+  pull_request:
+  # Build on commits pushed to branches without a PR if it's in the allowlist
+  push:
+    branches: [main]
 
 jobs:
   build:
