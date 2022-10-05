@@ -1,12 +1,11 @@
 ---
-name: CI
+name: CI & Release
 
 on:
-  # Build on pushes to release branches
-  push:
-    branches: [main]
-  # Build on pull requests targeting release branches
+   # Build on pushes branches that have a PR (including drafts)
   pull_request:
+  # Build on commits pushed to branches without a PR if it's in the allowlist
+  push:
     branches: [main]
   # https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow
   # https://github.com/sanity-io/semantic-release-preset/actions/workflows/ci.yml
