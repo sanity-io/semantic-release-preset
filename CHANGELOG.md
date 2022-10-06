@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.2](https://github.com/sanity-io/semantic-release-preset/compare/v2.0.1...v2.0.2) (2022-10-06)
+
+### Bug Fixes
+
+- update readme CI example ([1e8a5a2](https://github.com/sanity-io/semantic-release-preset/commit/1e8a5a24bc9ff84290a8080526bbf9b691fe10a4))
+
 ## [2.0.1](https://github.com/sanity-io/semantic-release-preset/compare/v2.0.0...v2.0.1) (2022-08-24)
 
 ### Bug Fixes
