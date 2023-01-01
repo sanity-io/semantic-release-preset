@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.5](https://github.com/sanity-io/semantic-release-preset/compare/v2.0.4...v2.0.5) (2023-01-01)
+
+### Bug Fixes
+
+- **deps:** lock file maintenance ([#39](https://github.com/sanity-io/semantic-release-preset/issues/39)) ([bcdd373](https://github.com/sanity-io/semantic-release-preset/commit/bcdd373d549e4a4dd3767e33fb3a7c6219a41e53))
+
 ## [2.0.4](https://github.com/sanity-io/semantic-release-preset/compare/v2.0.3...v2.0.4) (2022-12-16)
 
 ### Bug Fixes
