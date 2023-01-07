@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/sanity-io/semantic-release-preset/compare/v2.0.5...v3.0.0) (2023-01-07)
+
+### ⚠ BREAKING CHANGES
+
+- **deps:** Drops support for Node v16 and older
+
+### Bug Fixes
+
+- **deps:** update dependency semantic-release to v20 ([#40](https://github.com/sanity-io/semantic-release-preset/issues/40)) ([8dd50d9](https://github.com/sanity-io/semantic-release-preset/commit/8dd50d9a57b4c9f37e6e34305fb0bcf31eee2347))
+
 ## [2.0.5](https://github.com/sanity-io/semantic-release-preset/compare/v2.0.4...v2.0.5) (2023-01-01)
 
 ### Bug Fixes
