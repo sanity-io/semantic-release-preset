@@ -5,6 +5,16 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0](https://github.com/sanity-io/semantic-release-preset/compare/v3.0.2...v4.0.0) (2023-01-20)
+
+### ⚠ BREAKING CHANGES
+
+- if your package manager don't auto install peers add `semantic-release` manually: `npm install --save-dev semantic-release`
+
+### Code Refactoring
+
+- `semantic-release` is now a peer dep ([bcc84e7](https://github.com/sanity-io/semantic-release-preset/commit/bcc84e7a5d75cda1f50cc236778b716e1b792276))
+
 ## [3.0.2](https://github.com/sanity-io/semantic-release-preset/compare/v3.0.1...v3.0.2) (2023-01-08)
 
 ### Bug Fixes
