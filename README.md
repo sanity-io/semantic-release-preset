@@ -34,21 +34,11 @@
 npm i -D @sanity/semantic-release-preset
 ```
 
-<details>
-<summary>Why isn't <code>semantic-release</code> a peer dependency?</summary>
-
-There's a [convention](https://github.com/semantic-release/gitlab-config#install) in `semantic-release` presets to have it as a peer, which would make the install setup look like this:
+If your package manager don't auto install peer dependencies make sure to install `semantic-release`:
 
 ```bash
-npm install --save-dev semantic-release @sanity/semantic-release-preset
+npm i -D semantic-release
 ```
-
-This leaves it to you to keep both dependencies up to date. This package is primarily designed to ease our own internal `@sanity` npm packages, and thus we prefer for it to be a single dependency.
-That way we avoid mismatch bugs where bots might make a PR that updates `semantic-release` to a new, breaking, major version. But fail to also update `@sanity/semantic-release-preset` causing it to fail.
-
-By declaring it as a normal `dependency` we avoid these issues, and reduce churn and PR noise.
-
-</details>
 
 ## Setup the release config
 
@@ -65,10 +55,10 @@ The `branches` array is [mandatory](https://semantic-release.gitbook.io/semantic
 
 ### Optional: Configure prerelease branches
 
-If you have stable releases going out from the git branch `main`, and want commits on the branch `v3` to result in only being installable with the npm dist-tag `dev-preview`:
+If you have stable releases going out from the git branch `main`, and want commits on the branch `beta` to result in only being installable with the npm dist-tag `beta`:
 
 ```bash
-npm i package-name@dev-preview
+npm i package-name@beta
 ```
 
 But not on:
@@ -82,62 +72,9 @@ Then use this config:
 ```json
 {
   "extends": "@sanity/semantic-release-preset",
-  "branches": [
-    "main",
-    { "name": "v3", "channel": "dev-preview", "prerelease": true }
-  ]
+  "branches": ["main", { "name": "beta", "prerelease": true }]
 }
 ```
-
-### Optional: Advanced prerelease branches
-
-On many studio v3 plugins we're using the `main` git branch to push prereleases that are installable as:
-
-```bash
-npm i package-name@studio-v3
-```
-
-And that's saved to the `package.json` as:
-
-```json
-{
-  "dependencies": {
-    "package-name": "^1.0.0-v3-studio.1"
-  }
-}
-```
-
-To run that setup use:
-
-```json
-{
-  "extends": "@sanity/semantic-release-preset",
-  "branches": [
-    { "name": "studio-v2", "channel": "latest" },
-    { "name": "main", "channel": "studio-v3", "prerelease": "v3-studio" }
-  ]
-}
-```
-
-### Why not use `"prerelease": true`?
-
-If `prerelease` is `true` instead of `v3-studio` this is what happens when it's installed:
-
-```json
-{
-  "dependencies": {
-    "package-name": "^1.0.0-studio-v3.1"
-  }
-}
-```
-
-Since we use the name `studio-v3` as the `channel`, the prerelease increment makes it look like the studio version is `v3.1`, which is confusing. Alternatively, you could set `channel` to `v3-studio` but then the install command would change to this:
-
-```bash
-npm i package-name@v3-studio
-```
-
-And since we always say "Studio v3" and never "v3 Studio" when talking about the new version it's better to use both `channel` and `prerelease` to set the optimal ordering individually.
 
 ## Minimal GitHub Release workflow
 
@@ -161,8 +98,8 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
+          cache: npm
           node-version: lts/*
-          cache: 'npm'
       - run: npm ci
       - run: npm test --if-present
       # Branches that will release new versions are defined in .releaserc.json
@@ -208,8 +145,8 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v3
         with:
+          cache: npm
           node-version: lts/*
-          cache: 'npm'
       - run: npm ci
       - run: npm test --if-present
       # Branches that will release new versions are defined in .releaserc.json
