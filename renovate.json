@@ -5,6 +5,7 @@
     "github>sanity-io/renovate-presets//ecosystem/automerge",
     ":assignAndReview(stipsan)"
   ],
+  "additionalReviewers": ["team:@sanity-io/ecosystem"],
   "packageRules": [
     {
       "matchPackageNames": ["semantic-release-license"],
