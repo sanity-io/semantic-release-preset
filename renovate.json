@@ -3,10 +3,8 @@
   "extends": [
     "github>sanity-io/renovate-presets//ecosystem/auto",
     "github>sanity-io/renovate-presets//ecosystem/automerge",
-    ":assignAndReview(team:ecosystem)",
     ":assignAndReview(stipsan)"
   ],
-  "reviewers": ["team:ecosystem"],
   "packageRules": [
     {
       "matchPackageNames": ["semantic-release-license"],
