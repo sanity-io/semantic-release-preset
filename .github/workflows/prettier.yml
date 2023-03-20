@@ -37,14 +37,17 @@ jobs:
           key: prettier-${{ hashFiles('package-lock.json') }}-${{ hashFiles('.gitignore') }}
       - run: npm run fmt
       - run: git restore .github/workflows
-        name: Remove changes to workflow files, as it's a bad idea to let robots change their own workflow definitions
-      - uses: gr2m/create-or-update-pull-request-action@df20b2c073090271599a08c55ae26e0c3522b329 # v1.9.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_PR_TOKEN }}
+      - uses: tibdex/github-app-token@b62528385c34dbc9f38e5f4225ac829252d1ea92 # v1
+        id: generate-token
+        with:
+          app_id: ${{ secrets.ECOSPARK_APP_ID }}
+          private_key: ${{ secrets.ECOSPARK_APP_PRIVATE_KEY }}
+      - uses: peter-evans/create-pull-request@38e0b6e68b4c852a5500a94740f0e535e0d7ba54 # v4
         with:
           author: github-actions <41898282+github-actions[bot]@users.noreply.github.com>
+          body: I ran `npm run prettier` 🧑‍💻
           branch: actions/prettier-if-needed
-          title: 'chore(prettier): fix unformatted files'
-          body: A robot ran `npm run prettier` and made this PR.
           commit-message: 'chore(prettier): 🤖 ✨'
           labels: 🤖 bot
+          title: 'chore(prettier): 🤖 ✨'
+          token: ${{ steps.generate-token.outputs.token }}
