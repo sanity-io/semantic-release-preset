@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/sanity-io/semantic-release-preset/compare/v4.1.0...v4.1.1) (2023-04-12)
+
+### Bug Fixes
+
+- reduce GitHub rate limit errors ([#81](https://github.com/sanity-io/semantic-release-preset/issues/81)) ([b24eb19](https://github.com/sanity-io/semantic-release-preset/commit/b24eb1941eb19a0cf327c949b802b93b495ee690))
+
 ## [4.1.0](https://github.com/sanity-io/semantic-release-preset/compare/v4.0.2...v4.1.0) (2023-03-26)
 
 ### Features

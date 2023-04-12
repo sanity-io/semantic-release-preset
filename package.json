@@ -1,6 +1,6 @@
 {
   "name": "@sanity/semantic-release-preset",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Recommended setup for releasing semantically using GitHub Actions workflows",
   "keywords": [
     ".releaserc.json",
