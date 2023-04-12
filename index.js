@@ -52,7 +52,10 @@ All notable changes to this project will be documented in this file. See
       '@semantic-release/github',
       {
         addReleases: 'bottom',
-        assets: '.semantic-release/*.tgz'
+        assets: '.semantic-release/*.tgz',
+        // These features currently frequently leads to GitHub API rate limit errors, so we disable them for now.
+        successComment: false,
+        releasedLabels: false
       }
     ]
   ]
