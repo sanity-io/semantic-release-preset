@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.3](https://github.com/sanity-io/semantic-release-preset/compare/v4.1.2...v4.1.3) (2023-08-07)
+
+### Bug Fixes
+
+- turn `successComment` on github release back on ([5660189](https://github.com/sanity-io/semantic-release-preset/commit/5660189573732087f4796beb08fc1085ccaf74f0))
+
 ## [4.1.2](https://github.com/sanity-io/semantic-release-preset/compare/v4.1.1...v4.1.2) (2023-07-13)
 
 ### Bug Fixes
