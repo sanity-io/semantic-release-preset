@@ -1,6 +1,6 @@
 {
   "name": "@sanity/semantic-release-preset",
-  "version": "4.1.3",
+  "version": "4.1.4-canary.2",
   "description": "Recommended setup for releasing semantically using GitHub Actions workflows",
   "keywords": [
     ".releaserc.json",
@@ -68,6 +68,7 @@
     "node": ">=18"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   }
 }

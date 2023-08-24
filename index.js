@@ -54,7 +54,9 @@ All notable changes to this project will be documented in this file. See
         addReleases: 'bottom',
         assets: '.semantic-release/*.tgz',
         // These features currently frequently leads to GitHub API rate limit errors, so we disable them for now.
-        releasedLabels: false
+        releasedLabels: false,
+        // @TODO remove this before releasing on main
+        successComment: false
       }
     ]
   ]
