@@ -30,35 +30,36 @@ All notable changes to this project will be documented in this file. See
     [
       '@semantic-release/npm',
       {
+        npmPublish: false,
         tarballDir: '.semantic-release'
       }
     ],
-    'semantic-release-license',
-    [
-      '@semantic-release/git',
-      {
-        assets: [
-          'CHANGELOG.md',
-          'LICENSE',
-          'package-lock.json',
-          'package.json',
-          'pnpm-lock.yaml',
-          'yarn.lock'
-        ],
-        message: 'chore(release): ${nextRelease.version} [skip ci]'
-      }
-    ],
-    [
-      '@semantic-release/github',
-      {
-        addReleases: 'bottom',
-        assets: '.semantic-release/*.tgz',
-        // These features currently frequently leads to GitHub API rate limit errors, so we disable them for now.
-        releasedLabels: false,
-        // @TODO remove this before releasing on main
-        successComment: false
-      }
-    ]
+    'semantic-release-license'
+    // [
+    //   '@semantic-release/git',
+    //   {
+    //     assets: [
+    //       'CHANGELOG.md',
+    //       'LICENSE',
+    //       'package-lock.json',
+    //       'package.json',
+    //       'pnpm-lock.yaml',
+    //       'yarn.lock'
+    //     ],
+    //     message: 'chore(release): ${nextRelease.version} [skip ci]'
+    //   }
+    // ]
+    // [
+    //   '@semantic-release/github',
+    //   {
+    //     addReleases: 'bottom',
+    //     assets: '.semantic-release/*.tgz',
+    //     // These features currently frequently leads to GitHub API rate limit errors, so we disable them for now.
+    //     releasedLabels: false,
+    //     // @TODO remove this before releasing on main
+    //     successComment: false
+    //   }
+    // ]
   ]
 }
 
