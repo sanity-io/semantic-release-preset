@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4-canary.1](https://github.com/sanity-io/semantic-release-preset/compare/v4.1.3...v4.1.4-canary.1) (2023-08-24)
+
+### Bug Fixes
+
+- add provenance ([cf35960](https://github.com/sanity-io/semantic-release-preset/commit/cf359604710e1feed999218780e4ec48c83cee3a))
+
 ## [4.1.3](https://github.com/sanity-io/semantic-release-preset/compare/v4.1.2...v4.1.3) (2023-08-07)
 
 ### Bug Fixes
