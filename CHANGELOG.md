@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4-canary.3](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.4-canary.2...@sanity/semantic-release-preset@4.1.4-canary.3) (2023-08-24)
+
+### Bug Fixes
+
+- test semantic release prep ([b144bb4](https://github.com/sanity-io/semantic-release-preset/commit/b144bb4a855d37e811c8e168e817b17739f820ff))
+
 ## [4.1.4-canary.2](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.4-canary.1...@sanity/semantic-release-preset@4.1.4-canary.2) (2023-08-24)
 
 ### Bug Fixes
