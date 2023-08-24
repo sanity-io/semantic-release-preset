@@ -21,10 +21,6 @@ jobs:
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
-    # only run if opt-in during workflow_dispatch
-    # needs.test.result: 'success' | 'failure' | 'skipped' | 'cancelled'
-    # If the state is success or skipped it's safe to do the release
-    if: always() && github.event.inputs.release == 'true' && needs.test.result != 'failure' && needs.test.result != 'cancelled'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
