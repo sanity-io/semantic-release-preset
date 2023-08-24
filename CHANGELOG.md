@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4-canary.2](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.4-canary.1...@sanity/semantic-release-preset@4.1.4-canary.2) (2023-08-24)
+
+### Bug Fixes
+
+- turn off success comments for now ([ebf2846](https://github.com/sanity-io/semantic-release-preset/commit/ebf2846f652cf82d050839f15e0d636b106a9302))
+
 ## 1.0.0-canary.1 (2023-08-24)
 
 ### ⚠ BREAKING CHANGES
