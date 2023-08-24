@@ -5,6 +5,14 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.4](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.3...@sanity/semantic-release-preset@4.1.4) (2023-08-24)
+
+### Bug Fixes
+
+- add provenance ([cf35960](https://github.com/sanity-io/semantic-release-preset/commit/cf359604710e1feed999218780e4ec48c83cee3a))
+- turn off success comments for now ([ebf2846](https://github.com/sanity-io/semantic-release-preset/commit/ebf2846f652cf82d050839f15e0d636b106a9302))
+- use tagFormat for monorepos ([81edfff](https://github.com/sanity-io/semantic-release-preset/commit/81edfff2597094ec808e6761a45a8f0ebfbb8c88))
+
 ## [4.1.4-canary.2](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.4-canary.1...@sanity/semantic-release-preset@4.1.4-canary.2) (2023-08-24)
 
 ### Bug Fixes
