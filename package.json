@@ -59,13 +59,13 @@
     "ls-engines": "0.9.0",
     "prettier": "^3.0.2",
     "prettier-plugin-packagejson": "^2.4.5",
-    "semantic-release": "21.1.1"
+    "semantic-release": "22.0.5"
   },
   "peerDependencies": {
-    "semantic-release": "20 || 21"
+    "semantic-release": "20 || 21 || 22"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">= 18.17"
   },
   "publishConfig": {
     "access": "public",
