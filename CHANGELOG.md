@@ -5,6 +5,12 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.6](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.5...@sanity/semantic-release-preset@4.1.6) (2023-10-24)
+
+### Bug Fixes
+
+- **deps:** update dependency semantic-release to v22 ([e67b045](https://github.com/sanity-io/semantic-release-preset/commit/e67b04578310ec47252ae057ff7c075dd2d4fc54))
+
 ## [4.1.5](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.4...@sanity/semantic-release-preset@4.1.5) (2023-10-23)
 
 ### Bug Fixes
