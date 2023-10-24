@@ -8,6 +8,11 @@
     {
       "matchPackageNames": ["semantic-release-license"],
       "automerge": false
+    },
+    {
+      "matchDepTypes": ["dependencies", "peerDependencies"],
+      "rangeStrategy": "bump",
+      "semanticCommitType": "fix"
     }
   ]
 }
