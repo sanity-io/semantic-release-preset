@@ -55,13 +55,13 @@
     "semantic-release-license": "^1.0.3"
   },
   "devDependencies": {
-    "ls-engines": "0.9.0",
-    "prettier": "^3.0.3",
-    "prettier-plugin-packagejson": "^2.4.6",
-    "semantic-release": "^22.0.5"
+    "ls-engines": "0.9.1",
+    "prettier": "^3.1.1",
+    "prettier-plugin-packagejson": "^2.4.9",
+    "semantic-release": "^22.0.12"
   },
   "peerDependencies": {
-    "semantic-release": "^22.0.5"
+    "semantic-release": "^22.0.12"
   },
   "engines": {
     "node": ">= 18.17"
