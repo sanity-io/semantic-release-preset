@@ -64,7 +64,7 @@
     "semantic-release": "^23.0.2"
   },
   "engines": {
-    "node": ">= 18.17"
+    "node": ">= 20.8"
   },
   "publishConfig": {
     "access": "public",
