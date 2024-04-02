@@ -57,8 +57,8 @@
   "devDependencies": {
     "ls-engines": "0.9.1",
     "prettier": "^3.2.5",
-    "prettier-plugin-packagejson": "^2.4.12",
-    "semantic-release": "^23.0.2"
+    "prettier-plugin-packagejson": "^2.4.14",
+    "semantic-release": "^23.0.6"
   },
   "peerDependencies": {
     "semantic-release": "^22.0.12 || ^23.0.2"
