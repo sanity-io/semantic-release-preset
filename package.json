@@ -51,7 +51,7 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "conventional-changelog-conventionalcommits": "^7.0.2",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
     "semantic-release-license": "^1.0.3"
   },
   "devDependencies": {
