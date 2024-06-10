@@ -8,8 +8,8 @@ const preset = 'conventionalcommits'
  **/
 const options = {
   plugins: [
-    ['@semantic-release/commit-analyzer', { preset }],
-    ['@semantic-release/release-notes-generator', { preset }],
+    ['@semantic-release/commit-analyzer', {preset}],
+    ['@semantic-release/release-notes-generator', {preset}],
     [
       '@semantic-release/changelog',
       {
@@ -18,20 +18,20 @@ const options = {
 # 📓 Changelog
 
 All notable changes to this project will be documented in this file. See
-[Conventional Commits](https://conventionalcommits.org) for commit guidelines.`
-      }
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.`,
+      },
     ],
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'npx -y prettier --write CHANGELOG.md'
-      }
+        prepareCmd: 'npx -y prettier --write CHANGELOG.md',
+      },
     ],
     [
       '@semantic-release/npm',
       {
-        tarballDir: '.semantic-release'
-      }
+        tarballDir: '.semantic-release',
+      },
     ],
     'semantic-release-license',
     [
@@ -43,10 +43,10 @@ All notable changes to this project will be documented in this file. See
           'package-lock.json',
           'package.json',
           'pnpm-lock.yaml',
-          'yarn.lock'
+          'yarn.lock',
         ],
-        message: 'chore(release): ${nextRelease.version} [skip ci]'
-      }
+        message: 'chore(release): ${nextRelease.version} [skip ci]',
+      },
     ],
     [
       '@semantic-release/github',
@@ -56,10 +56,10 @@ All notable changes to this project will be documented in this file. See
         // These features currently frequently leads to GitHub API rate limit errors, so we disable them for now.
         releasedLabels: false,
         // @TODO remove this before releasing on main
-        successComment: false
-      }
-    ]
-  ]
+        successComment: false,
+      },
+    ],
+  ],
 }
 
 module.exports = options
