@@ -70,7 +70,7 @@ Then use this config:
 ```json
 {
   "extends": "@sanity/semantic-release-preset",
-  "branches": ["main", { "name": "beta", "prerelease": true }]
+  "branches": ["main", {"name": "beta", "prerelease": true}]
 }
 ```
 

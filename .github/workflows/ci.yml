@@ -17,12 +17,12 @@ on:
   workflow_dispatch:
     inputs:
       test:
-        description: 'Run tests'
+        description: "Run tests"
         required: true
         default: true
         type: boolean
       release:
-        description: 'Publish new release'
+        description: "Publish new release"
         required: true
         default: false
         type: boolean
