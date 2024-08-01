@@ -52,8 +52,8 @@
   },
   "devDependencies": {
     "@sanity/prettier-config": "^1.0.2",
-    "ls-engines": "0.9.1",
-    "prettier": "^3.3.1",
+    "ls-engines": "0.9.3",
+    "prettier": "^3.3.3",
     "semantic-release": "^24.0.0"
   },
   "peerDependencies": {
