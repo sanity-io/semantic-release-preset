@@ -54,13 +54,13 @@
     "@sanity/prettier-config": "^1.0.2",
     "ls-engines": "0.9.3",
     "prettier": "^3.3.3",
-    "semantic-release": "^24.0.0"
+    "semantic-release": "^25.0.0"
   },
   "peerDependencies": {
-    "semantic-release": "^24"
+    "semantic-release": "^25"
   },
   "engines": {
-    "node": ">= 20.8"
+    "node": "^22.14.0 || >=24.10.0"
   },
   "publishConfig": {
     "access": "public",
