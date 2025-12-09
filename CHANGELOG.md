@@ -5,6 +5,17 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [6.0.0](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@5.0.0...@sanity/semantic-release-preset@6.0.0) (2025-12-09)
+
+### ⚠ BREAKING CHANGES
+
+- Now requires peer dependency `semantic-release@^25`
+- Now requires Node.js version ^22.14.0 or ^24.10.0
+
+### Bug Fixes
+
+- require `semantic-release` v25, node v22.14/v24.10 ([#130](https://github.com/sanity-io/semantic-release-preset/issues/130)) ([19bdb9f](https://github.com/sanity-io/semantic-release-preset/commit/19bdb9f7d4312d388750c7ce2a756fc60908b8e1))
+
 ## [5.0.0](https://github.com/sanity-io/semantic-release-preset/compare/@sanity/semantic-release-preset@4.1.8...@sanity/semantic-release-preset@5.0.0) (2024-06-10)
 
 ### ⚠ BREAKING CHANGES
