@@ -57,6 +57,10 @@ All notable changes to this project will be documented in this file. See
         releasedLabels: false,
         // @TODO remove this before releasing on main
         successComment: false,
+        // Allow customizing the release name via an environment variable
+        ...(process.env.SR_RELEASE_NAME_TEMPLATE && {
+          releaseNameTemplate: process.env.SR_RELEASE_NAME_TEMPLATE,
+        }),
       },
     ],
   ],
