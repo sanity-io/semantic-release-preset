@@ -8,8 +8,8 @@ const preset = 'conventionalcommits'
  **/
 const options = {
   plugins: [
-    ['@semantic-release/commit-analyzer', { preset }],
-    ['@semantic-release/release-notes-generator', { preset }],
+    ['@semantic-release/commit-analyzer', {preset}],
+    ['@semantic-release/release-notes-generator', {preset}],
     [
       '@semantic-release/changelog',
       {
@@ -18,21 +18,21 @@ const options = {
 # 📓 Changelog
 
 All notable changes to this project will be documented in this file. See
-[Conventional Commits](https://conventionalcommits.org) for commit guidelines.`
-      }
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.`,
+      },
     ],
     [
       '@semantic-release/exec',
       {
         prepareCmd:
-          'npx -y prettier --write CHANGELOG.md || npx -y oxfmt --write CHANGELOG.md || echo "Unable to format CHANGELOG.md, skipping"'
-      }
+          'npx -y prettier --write CHANGELOG.md || npx -y oxfmt --write CHANGELOG.md || echo "Unable to format CHANGELOG.md, skipping"',
+      },
     ],
     [
       '@semantic-release/npm',
       {
-        tarballDir: '.semantic-release'
-      }
+        tarballDir: '.semantic-release',
+      },
     ],
     'semantic-release-license',
     [
@@ -44,10 +44,10 @@ All notable changes to this project will be documented in this file. See
           'package-lock.json',
           'package.json',
           'pnpm-lock.yaml',
-          'yarn.lock'
+          'yarn.lock',
         ],
-        message: 'chore(release): ${nextRelease.version} [skip ci]'
-      }
+        message: 'chore(release): ${nextRelease.version} [skip ci]',
+      },
     ],
     [
       '@semantic-release/github',
@@ -60,11 +60,11 @@ All notable changes to this project will be documented in this file. See
         successComment: false,
         // Allow customizing the release name via an environment variable
         ...(process.env.SR_RELEASE_NAME_TEMPLATE && {
-          releaseNameTemplate: process.env.SR_RELEASE_NAME_TEMPLATE
-        })
-      }
-    ]
-  ]
+          releaseNameTemplate: process.env.SR_RELEASE_NAME_TEMPLATE,
+        }),
+      },
+    ],
+  ],
 }
 
 module.exports = options
